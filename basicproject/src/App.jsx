@@ -4,8 +4,8 @@ import Chai from './chai'
 
 
 function App() {
-  return (
-    <>
+  return (             // <> is called fragment , we are returning a fragement 
+    <>                     
     <h1>Hello ji</h1>
     <Chai/>
     </>
