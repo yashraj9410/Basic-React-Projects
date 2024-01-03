@@ -1,8 +1,8 @@
 const createElement =  (reactElement, mainContainer) => {
-const domElement = mainContainer.createElement(reactElement.type)
-    domElement.innerHtml = reactElement.children
-    for(let attr in reactElement.props){
-        domElement[attr] = reactElement.props[attr];
+const domElement = document.createElement(reactElement.type)
+    domElement.text = reactElement.children
+    for(const prop in reactElement.props){
+        domElement.setAttribute(prop,reactElement.props[prop])
     }
     mainContainer.appendChild(domElement);
 }
@@ -10,7 +10,8 @@ const domElement = mainContainer.createElement(reactElement.type)
 const reactElement = {
     type:'a',
     props:{
-        href:"https://google.com"
+        href:'https://google.com',
+        target: '_blank'
     },
     children:"Open Google"
 }
