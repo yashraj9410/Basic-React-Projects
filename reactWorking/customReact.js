@@ -1,3 +1,5 @@
+// this js program demonstrates the inner working of react
+
 const createElement =  (reactElement, mainContainer) => {
 const domElement = document.createElement(reactElement.type)
     domElement.text = reactElement.children
