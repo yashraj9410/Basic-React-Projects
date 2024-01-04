@@ -12,15 +12,15 @@ import { useState } from 'react'
 // } 
 
 function App() {
-
-  let [counter,setCounter] = useState(0);
+ 
+  let [counter,setCounter] = useState(0);              // let [varName , funcToChangeVariable] = useState(initialState);
 
   const increase = ()=> {
-      setCounter(counter++)
+      setCounter(++counter)
   }
 
   const decrease = ()=> {
-      setCounter(counter--)
+      setCounter(--counter)
   }
 
   return (
