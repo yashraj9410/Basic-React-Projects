@@ -16,11 +16,11 @@ function App() {
   let [counter,setCounter] = useState(0);              // let [varName , funcToChangeVariable] = useState(initialState);
 
   const increase = ()=> {
-      setCounter(++counter)
+      setCounter((counter<20)?counter+1:counter)
   }
 
   const decrease = ()=> {
-      setCounter(--counter)
+      setCounter((counter>0)?counter-1: counter)
   }
 
   return (
