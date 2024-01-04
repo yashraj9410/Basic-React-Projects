@@ -1,33 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+
+// let counter = 0;
+// const increase = ()=> {
+//   counter++;
+//   console.log(counter)
+// }                                      this way will no effect to counter hence we use hooks to update a variable with a single click over the page 
+// const decrease = ()=>{
+//   counter--;
+//   console.log(counter)
+// } 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  let [counter,setCounter] = useState(0);
+
+  const increase = ()=> {
+      setCounter(counter++)
+  }
+
+  const decrease = ()=> {
+      setCounter(counter--)
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Chai aur react {counter}</h1>
+      <button onClick={increase}>Increase Value</button>
+      <br></br>
+      <button onClick={decrease} >Decrease Value</button>
     </>
   )
 }
