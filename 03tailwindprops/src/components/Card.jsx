@@ -1,4 +1,4 @@
-const  Sunset =  () => {
+const  Card =  () => {
     return (
         <>
     <div class="max-w-sm rounded overflow-hidden shadow-lg">
@@ -19,4 +19,4 @@ const  Sunset =  () => {
     )
 }
 
-export default Sunset;
+export default Card;
