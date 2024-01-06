@@ -1,12 +1,19 @@
 import { useState } from 'react'
+import ButtonComp from './components/ButtonComp'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState(null)
   const buttons = ['red','green','blue','black','yellow','pink']
+
+  const changeBg = (color) => {
+    setColor(color);
+  }
 
   return (
     <>
-      <div ></div>
+      <div>
+        <ButtonComp colors = {buttons} onClick = {changeBg} />
+      </div>
     </>
   )
 }
