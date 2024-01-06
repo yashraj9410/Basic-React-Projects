@@ -21,8 +21,8 @@ function App() {
 
   return (
     <>
-    <Card title= {kumaon_obj.title} place={kumaon_obj.place} tags = {kumaon_obj.tags}/>
-    <Card title= {garhwal_obj.title} place={garhwal_obj.place} tags = {garhwal_obj.tags}/>
+    <Card  myObj = {kumaon_obj} />
+    <Card  myObj= {garhwal_obj}/>
     </>
   )
 }

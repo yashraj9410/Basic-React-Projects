@@ -1,6 +1,14 @@
 // the parameter  of a react functional component by default are called with props keyword
+// below is a reusable card component with the help of prop
 
-const Card = ({title,place,tags}) => {  
+const Card = (props) => {  
+
+  if(props.myObj === undefined){
+    return "props.myObj is Not defined"
+  }
+
+  const {title,place,tags} = props.myObj
+  console.log(title,place,tags)
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
