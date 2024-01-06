@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import ButtonComp from './components/ButtonComp'
 
 function App() {
@@ -8,6 +8,10 @@ function App() {
   const changeBg = (color) => {
     setColor(color);
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = color;
+  }, [color]);
 
   return (
     <>
