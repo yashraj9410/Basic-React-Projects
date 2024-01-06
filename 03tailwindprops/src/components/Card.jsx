@@ -1,4 +1,5 @@
-const Card = () => {
+const Card = (props) => {
+  console.log(props)
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
