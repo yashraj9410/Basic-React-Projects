@@ -15,10 +15,12 @@ function App() {
     setSymbolAllow(prevVal => !prevVal)
   }
 
-// for copy the password
-  const copyPassword =() => {
-
+// for copy the password 
+  const copyPassword = useCallback(() => {
+    window.navigator.clipboard.writeText(pass)
   }
+  ,[password]) 
+
   // creating the useCallback hook for the password genration it takes a call back and a dependency list
   // the useCallback hook caches a function definition between multiple re renders ie the function will always run if any of the dependency is altered without a reload 
   const createPassword = useCallback(() => {
