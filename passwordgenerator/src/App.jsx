@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 function App() {
 
@@ -8,6 +8,10 @@ function App() {
   const [symbolAllow, setSymbolAllow] = useState(false);
   const [password, setPassword] = useState("");
 
+// for copy the password
+  const copyPassword =() => {
+
+  }
   // creating the useCallback hook for the password genration it takes a call back and a dependency list
   // the useCallback hook caches a function definition between multiple re renders ie the function will always run if any of the dependency is altered without a reload 
   const createPassword = useCallback(() => {
@@ -20,13 +24,40 @@ function App() {
       let index =  Math.floor(Math.random()*str.length +1)
       pass = pass + str.charAt(index);
     }
-    
-  }
-    , [length, numberAllow, symbolAllow, setPassword])  // we are passing sePassword that is because that only sets the state of password
+    setPassword(pass);
+    }, [length, numberAllow, symbolAllow, setPassword])  // we are passing sePassword that is because that only sets the state of password
+
+    useEffect(()=> {
+      createPassword()
+    }, [length,numberAllow,symbolAllow])
 
   return (
     <>
-      <div></div>
+      <div>
+        <div>
+          <input 
+            type="text"
+            value={password}
+            placeholder='Password'
+            readOnly
+          /> 
+          <button onClick={copyPassword}>Copy</button>
+        </div>
+        <div>
+          <input 
+            type="range"
+            min={6}
+            max={16}
+            value={length}
+          />
+          <label>length({length})</label>
+          <input 
+            type="checkbox"
+            value={numberAllow}
+            onChange={numberFunc}
+          />
+        </div>
+      </div>
     </>
   )
 }
