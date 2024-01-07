@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
 function App() {
-
   // maintaing the hook for all the factors that affect the password
   const [length, setLength] = useState(8);
   const [numberAllow, setNumberAllow] = useState(false);
@@ -11,6 +10,12 @@ function App() {
 //on change functions for the checkboxes
   const numberFunc =() => {
     setNumberAllow((prevVal) => !prevVal)
+  }
+  const symbolFunc = () => {
+    setSymbolAllow(prevVal => !prevVal)
+  }
+  const changeLength = ()=> {
+    setLength()
   }
 
 // for copy the password
@@ -53,6 +58,7 @@ function App() {
             type="range"
             min={6}
             max={16}
+            onChange={(e) => {setLength(e.target.value)}}
             value={length}
           />
           <label>length({length})</label>
@@ -61,6 +67,13 @@ function App() {
             value={numberAllow}
             onChange={numberFunc}
           />
+          <label>Number</label>
+          <input 
+            type="checkbox"
+            value={symbolAllow}
+            onChange={symbolFunc}
+          />
+          <label>Number</label>
         </div>
       </div>
     </>
