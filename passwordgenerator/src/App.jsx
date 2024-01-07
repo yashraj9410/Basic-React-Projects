@@ -8,6 +8,7 @@ function App() {
   const [symbolAllow, setSymbolAllow] = useState(false);
   const [password, setPassword] = useState("");
 
+//on change functions for the checkboxes
   const numberFunc =() => {
     setNumberAllow((prevVal) => !prevVal)
   }
