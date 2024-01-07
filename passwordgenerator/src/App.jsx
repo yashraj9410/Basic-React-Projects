@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 function App() {
   // maintaing the hook for all the factors that affect the password
@@ -6,6 +6,7 @@ function App() {
   const [numberAllow, setNumberAllow] = useState(false);
   const [symbolAllow, setSymbolAllow] = useState(false);
   const [password, setPassword] = useState("");
+  const passwordRef = useRef(null);             // reference hook
 
 //on change functions for the checkboxes
   const numberFunc =() => {
@@ -17,6 +18,7 @@ function App() {
 
 // for copy the password 
   const copyPassword = useCallback(() => {
+    passwordRef.current?.select()            // to make visibbility more appearing to user
     window.navigator.clipboard.writeText(password)
   }
   ,[password]) 
@@ -43,17 +45,18 @@ function App() {
   return (
     <>
       <div className='bg-white rounded-2xl w-1/2 h-1/4 p-3'>
-        <div className=''>
+        <div className='p-4 bg-slate-400'>
           <input
-            className='rounded-2xl border-black' 
+            className='rounded-xl border-black' 
             type="text"
             value={password}
             placeholder='Password'
             readOnly
+            ref={passwordRef}
           /> 
-          <button onClick={copyPassword}>Copy</button>
+          <button className='bg-black text-white' onClick={copyPassword}>Copy</button>
         </div>
-        <div>
+        <div className='p-4 bg-slate-400 gap-5'>
           <input 
             type="range"
             min={6}
