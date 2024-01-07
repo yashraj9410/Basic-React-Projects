@@ -8,6 +8,10 @@ function App() {
   const [symbolAllow, setSymbolAllow] = useState(false);
   const [password, setPassword] = useState("");
 
+  const numberFunc =() => {
+    setNumberAllow((prevVal) => !prevVal)
+  }
+
 // for copy the password
   const copyPassword =() => {
 
