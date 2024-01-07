@@ -14,9 +14,6 @@ function App() {
   const symbolFunc = () => {
     setSymbolAllow(prevVal => !prevVal)
   }
-  const changeLength = ()=> {
-    setLength()
-  }
 
 // for copy the password
   const copyPassword =() => {
