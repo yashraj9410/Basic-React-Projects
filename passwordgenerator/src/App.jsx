@@ -42,9 +42,10 @@ function App() {
 
   return (
     <>
-      <div>
-        <div>
-          <input 
+      <div className='bg-white rounded-2xl w-1/2 h-1/4 p-3'>
+        <div className=''>
+          <input
+            className='rounded-2xl border-black' 
             type="text"
             value={password}
             placeholder='Password'
