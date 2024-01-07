@@ -17,7 +17,7 @@ function App() {
 
 // for copy the password 
   const copyPassword = useCallback(() => {
-    window.navigator.clipboard.writeText(pass)
+    window.navigator.clipboard.writeText(password)
   }
   ,[password]) 
 
