@@ -1,11 +1,13 @@
 import React from 'react'
 import UserContext from './userContext'
 
+// children are the components rendered under the UserContext Provider
 function UserContextProvider({children}) {
-    const [user,setuser] = React.useState(null);
+    const [user,setUser] = React.useState(null);
     // fetch all data here and then throw in value 
   return (
-    <UserContext.Provider value={{user,setuser}}>
+    <UserContext.Provider value={{user,setUser}}>
+        {children}
     </UserContext.Provider>
   )
 }
