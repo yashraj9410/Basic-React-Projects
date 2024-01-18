@@ -23,6 +23,7 @@ function App() {
 
   return (
     <>
+    {/* Providing the themeMode , and the functions for the childs ThemeBtn and Card to be used */}
       <ThemeProvider value={{themeMode,darkTheme,lightTheme}}>
         <div className="flex flex-wrap min-h-screen items-center">
                 <div className="w-full">
