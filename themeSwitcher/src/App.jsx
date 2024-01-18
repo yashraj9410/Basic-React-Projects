@@ -15,7 +15,7 @@ function App() {
     setThememode("dark")
   }
 
-  // actual chnage in theme will be caused by this use effect hook
+  // actual chnage in theme will be caused by this use effect hook whenever there will be a chnage in themeMode
   useEffect(()=>{
     document.querySelector('html').classList.remove("dark","light")
     document.querySelector('html').classList.add(themeMode)

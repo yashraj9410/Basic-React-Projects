@@ -3,6 +3,7 @@ import useTheme from "../contexts/Theme";
 
 export default function ThemeBtn() {
     
+    // the functions can be used by the child component ThemeBtn to alter the theme
     const {themeMode,lightTheme,darkTheme}=useTheme()
 
     const onChangeBtn =(e) => {
