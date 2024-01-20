@@ -6,6 +6,7 @@ export default function ThemeBtn() {
     // the functions can be used by the child component ThemeBtn to alter the theme
     const {themeMode,lightTheme,darkTheme}=useTheme()
 
+    // the onchange button uses the actual darktheme and lighttheme functions of context
     const onChangeBtn =(e) => {
         const darkModeStatus = e.currentTarget.checked;
         if(darkModeStatus){
