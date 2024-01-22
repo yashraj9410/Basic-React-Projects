@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import {useTodo} from '../context/TodoContext'
 
 function TodoItem({ todo }) {
+  console.log(todo)
 
   const [isTodoEditable, setIsTodoEditable] = useState(false)  // for toggle
-  const {todoMsg, setTodoMsg} = useState(todo.todo);  
+  const [todoMsg, setTodoMsg] = useState(todo.todo);  
   const {updateTodo,deleteTodo,toggleComplete} = useTodo();
 
   // update a todo two param
