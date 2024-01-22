@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { TodoProvider } from './context'
+import {TodoForm , TodoItem} from './components/index'
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   }
 
   const updateTodo = (id, todo) => {
-    setTodos((prevTodo) => prevTodo.map((prevTodo) => {prevTodo.id === id ? todo : prevTodo}))
+    setTodos((prevTodo) => prevTodo.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
   }
 
   const deleteTodo = (id) => {
@@ -18,7 +19,7 @@ function App() {
   }
 
   const toggleComplete = (id) => {
-    setTodos((prevTodo) => prevTodo.map((todo)=> { todo.id === id ? {...todo, completed:!todo.completed}: todo}))
+    setTodos((prevTodo) => prevTodo.map((todo)=> (todo.id === id ? {...todo, completed:!todo.completed}: todo)))
   }
 
   // for getting all the todos from local storage 
@@ -41,9 +42,15 @@ function App() {
               <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
               <div className="mb-4">
                   {/* Todo form goes here */} 
+                  <TodoForm/>
               </div>
               <div className="flex flex-wrap gap-y-3">
                   {/*Loop and Add TodoItem here */}
+                  {todos.map((currentTodo) =>(
+                    <div key={currentTodo.id} className='w-full'>
+                      <TodoItem todo={currentTodo}/>
+                    </div>
+                  ))}
               </div>
           </div>
       </div>
