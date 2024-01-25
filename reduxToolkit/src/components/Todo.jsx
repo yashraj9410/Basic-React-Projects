@@ -16,7 +16,7 @@ function Todo() {
     <div>Todos</div>
     {todos.map((todo)=>(
         <li key={todo.id}>{todo.text}
-        <button onClick={()=> dispatch(removeTodo(todo.id))}></button>
+        <button onClick={()=> dispatch(removeTodo(todo.id))}> Delete</button>
         </li>
     ))}
     </>
