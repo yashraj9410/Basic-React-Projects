@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useDispatch} from '@reduxjs/toolkit'
+import {useDispatch} from 'react-redux'
 import { addTodo,removeTodo } from '../features/todo/todoSlice'
 
 // here we will be using useDispatch because we are dispatching something to add 
