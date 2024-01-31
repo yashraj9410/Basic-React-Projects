@@ -1,1 +1,1 @@
-Multiple react js project with all basic concepts .
+Multiple react js project with all basic concepts.
